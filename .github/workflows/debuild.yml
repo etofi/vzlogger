@@ -157,7 +157,7 @@ jobs:
           SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
       - name: create bootstrap
         run: |
-          sudo pbuilder create --architecture ${{ matrix.architecture }} \
+          sudo pbuilder create --debug --architecture ${{ matrix.architecture }} \
                  --distribution ${{ matrix.distribution }} \
                  --basetgz $PBRT/current.tgz \
                  --debootstrap mmdebstrap \
